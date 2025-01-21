@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
 import SearchPage from './pages/SearchPage';
+import WatchPage from './pages/WatchPage';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Routes>
               <Route path="/" element={<MainContent />} />
               <Route path="/search/:searchQuery" element={<SearchPage />} />
+              <Route path="/watch/:videoId" element={<WatchPage />} />
             </Routes>
           </div>
         </div>

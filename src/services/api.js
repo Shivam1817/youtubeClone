@@ -38,3 +38,20 @@ export const searchVideos = async (query) => {
     throw error;
   }
 };
+
+// Add to play video 
+export const getVideoDetails = async (videoId) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/videos`, {
+      params: {
+        part: 'snippet,statistics',
+        id: videoId,
+        key: API_KEY
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching video details:', error);
+    throw error;
+  }
+};
