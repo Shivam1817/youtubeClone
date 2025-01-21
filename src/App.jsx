@@ -5,9 +5,11 @@ import MainContent from './components/MainContent';
 import SearchPage from './pages/SearchPage';
 import WatchPage from './pages/WatchPage';
 import './App.css';
+import { SidebarProvider } from './context/SidebarContext';
 
 function App() {
   return (
+  <SidebarProvider>
     <Router>
       <div className="app">
         <Header />
@@ -23,6 +25,7 @@ function App() {
         </div>
       </div>
     </Router>
+    </SidebarProvider>
   );
 }
 

@@ -169,41 +169,133 @@ body {
 /* Update the Header component JSX */
 
 /* Sidebar Styles */
+/* Add or update these styles in App.css */
 .sidebar {
   width: 240px;
   background-color: var(--yt-spec-base-background);
   height: calc(100vh - 56px);
-  overflow-y: auto;
   position: sticky;
   top: 56px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
   padding: 12px 0;
+}
+
+.sidebar__sections {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .sidebar__item {
   display: flex;
   align-items: center;
-  padding: 0 24px;
-  height: 40px;
+  padding: 8px 24px;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .sidebar__item:hover {
-  background-color: var(--yt-spec-raised-background);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar__item--active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar__item .MuiSvgIcon-root {
+  margin-right: 24px;
+  font-size: 24px;
 }
 
 .sidebar__item span {
-  margin-left: 24px;
   font-size: 14px;
+  font-weight: 400;
+  color: var(--yt-spec-text-primary);
 }
 
-.sidebar__item--selected {
-  background-color: var(--yt-spec-raised-background);
+.sidebar__signin {
+  padding: 16px 32px;
+  margin-top: 12px;
 }
 
-.sidebar__divider {
-  margin: 12px 0;
-  border: none;
-  border-top: 1px solid var(--yt-spec-border);
+.sidebar__signin p {
+  font-size: 14px;
+  color: var(--yt-spec-text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.sidebar__signinButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  color: #3ea6ff;
+  background: transparent;
+  border: 1px solid rgba(62, 166, 255, 0.4);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.sidebar__signinButton:hover {
+  background-color: rgba(62, 166, 255, 0.1);
+}
+
+.sidebar__signinButton .MuiSvgIcon-root {
+  font-size: 24px;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 72px;
+  }
+
+  .sidebar__item {
+    flex-direction: column;
+    padding: 16px 0;
+    height: 74px;
+  }
+
+  .sidebar__item .MuiSvgIcon-root {
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
+
+  .sidebar__item span {
+    font-size: 10px;
+  }
+
+  .sidebar__signin {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* Scrollbar styling */
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #717171;
+  border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
 }
 
 /* Categories Styles */
@@ -563,4 +655,40 @@ body {
   text-align: center;
   padding: 20px;
   color: var(--yt-spec-text-secondary);
+}
+
+/* Under Development Styles */
+.underDevelopment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 56px);
+  background-color: var(--yt-spec-base-background);
+  color: var(--yt-spec-text-primary);
+  text-align: center;
+  padding: 20px;
+}
+
+.underDevelopment__icon {
+  font-size: 64px !important;
+  margin-bottom: 24px;
+  color: var(--yt-spec-call-to-action);
+  animation: spin 4s linear infinite;
+}
+
+.underDevelopment h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.underDevelopment p {
+  font-size: 16px;
+  color: var(--yt-spec-text-secondary);
+  margin: 8px 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
