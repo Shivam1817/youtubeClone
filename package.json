@@ -2,7 +2,7 @@
   "name": "youtube-clone",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://shivam1817.github.io/youtubeClone",
+  "homepage": ".",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",

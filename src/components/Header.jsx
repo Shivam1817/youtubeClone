@@ -26,7 +26,7 @@ function Header() {
           <MenuIcon />
         </div>
         <img 
-          src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo_white.svg"
+          src=".../public/youtube-logo.png"
           alt="YouTube"
           className="header__logo"
           onClick={() => navigate('/')}
