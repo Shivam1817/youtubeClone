@@ -5,6 +5,7 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import ShareIcon from '@mui/icons-material/Share';
 import SaveIcon from '@mui/icons-material/Save';
+import Comments from '../components/Comments';
 
 function WatchPage() {
   const { videoId } = useParams();
@@ -71,6 +72,9 @@ function WatchPage() {
         <div className="watchPage__description">
           <h3>{video.snippet.channelTitle}</h3>
           <p>{video.snippet.description}</p>
+        </div>
+        <div className="watchPage__comments">
+            <Comments videoId={videoId} />
         </div>
       </div>
     </div>

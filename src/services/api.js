@@ -55,3 +55,22 @@ export const getVideoDetails = async (videoId) => {
     throw error;
   }
 };
+
+//adding to get comment on video 
+export const getVideoComments = async (videoId) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/commentThreads`, {
+      params: {
+        part: 'snippet',
+        videoId: videoId,
+        maxResults: 25,
+        order: 'relevance',
+        key: API_KEY
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching comments:', error);
+    throw error;
+  }
+};
